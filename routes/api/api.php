@@ -17,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['prefix' => config('api.version'), 'namespace' => 'Api'], function () {
+    Route::name('auth.')
+        ->namespace('Auth')
+        ->group(base_path('routes/api/auth.php'));
+    Route::middleware('auth:sanctum')
+        ->namespace('Invite')
+        ->name('invite.')
+        ->group(base_path('routes/api/invite.php'));
+});
