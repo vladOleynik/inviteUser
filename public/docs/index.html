@@ -85,7 +85,7 @@ fetch(url, {
     "http://localhost/api/v1/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"example@examle.com","password":"dolores"}'
+    -d '{"email":"example@examle.com","password":"aut"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/v1/login"
@@ -98,7 +98,7 @@ let headers = {
 
 let body = {
     "email": "example@examle.com",
-    "password": "dolores"
+    "password": "aut"
 }
 
 fetch(url, {
@@ -136,6 +136,60 @@ fetch(url, {
 </tbody>
 </table>
 <!-- END_8c0e48cd8efa861b308fc45872ff0837 -->
+<!-- START_d207e8ea51ac536a5e26fcdf0c543b60 -->
+<h2>api/v1/invite</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/api/v1/invite" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"recipient_id":12}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/invite"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "recipient_id": 12
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/v1/invite</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recipient_id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>id user for invite</td>
+</tr>
+</tbody>
+</table>
+<!-- END_d207e8ea51ac536a5e26fcdf0c543b60 -->
       </div>
       <div class="dark-box">
                         <div class="lang-selector">

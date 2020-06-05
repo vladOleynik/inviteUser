@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Invite extends Pivot
 {
+    protected $table = "invites";
+    protected $guarded = ['id'];
     use SoftDeletes;
 }

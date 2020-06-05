@@ -70,7 +70,7 @@ curl -X POST \
     "http://localhost/api/v1/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"example@examle.com","password":"dolores"}'
+    -d '{"email":"example@examle.com","password":"aut"}'
 
 ```
 
@@ -86,7 +86,7 @@ let headers = {
 
 let body = {
     "email": "example@examle.com",
-    "password": "dolores"
+    "password": "aut"
 }
 
 fetch(url, {
@@ -110,5 +110,54 @@ Parameter | Type | Status | Description
         `password` | string |  required  | password of user. Example secret
     
 <!-- END_8c0e48cd8efa861b308fc45872ff0837 -->
+
+<!-- START_d207e8ea51ac536a5e26fcdf0c543b60 -->
+## api/v1/invite
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost/api/v1/invite" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"recipient_id":12}'
+
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/v1/invite"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "recipient_id": 12
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST api/v1/invite`
+
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `recipient_id` | integer |  required  | id user for invite
+    
+<!-- END_d207e8ea51ac536a5e26fcdf0c543b60 -->
 
 
