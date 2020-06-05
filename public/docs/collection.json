@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "3647a0d2-34fc-4d8e-ad94-8d9f96e5762f",
+        "_postman_id": "ecd84085-4944-4db6-84e7-7d4ef8cdcbe1",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -61,7 +61,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"email\": \"example@examle.com\",\n    \"password\": \"dolores\"\n}"
                         },
                         "description": "",
                         "response": []

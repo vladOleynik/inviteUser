@@ -84,7 +84,9 @@ fetch(url, {
 <pre><code class="language-bash">curl -X POST \
     "http://localhost/api/v1/login" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -H "Accept: application/json" \
+    -d '{"email":"example@examle.com","password":"dolores"}'
+</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/v1/login"
 );
@@ -94,14 +96,45 @@ let headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "email": "example@examle.com",
+    "password": "dolores"
+}
+
 fetch(url, {
     method: "POST",
     headers: headers,
+    body: body
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST api/v1/login</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>string</td>
+<td>required</td>
+<td>email of user.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>string</td>
+<td>required</td>
+<td>password of user. Example secret</td>
+</tr>
+</tbody>
+</table>
 <!-- END_8c0e48cd8efa861b308fc45872ff0837 -->
       </div>
       <div class="dark-box">

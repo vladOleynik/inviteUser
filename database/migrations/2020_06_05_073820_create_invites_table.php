@@ -15,14 +15,14 @@ class CreateInvitesTable extends Migration
     {
         Schema::create('invites', function (Blueprint $table) {
             $table->unsignedBigInteger('initiator_invite');
-            $table->unsignedBigInteger('receiving_invite');
+            $table->unsignedBigInteger('recipient_invite');
             //по умолчанию заявка создаеться не принятой, если она отменена она софт удаляется
             $table->boolean('accepted_invite')->default(false);
             $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('initiator_invite')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('receiving_invite')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('recipient_invite')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    /**
+     * @bodyParam  email string required email of user. Example: example@examle.com
+     * @bodyParam  password string required  password of user. Example secret
+     * @param LoginRequest $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     */
     public function login(LoginRequest $request)
     {
         try {

@@ -69,7 +69,9 @@ fetch(url, {
 curl -X POST \
     "http://localhost/api/v1/login" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"
+    -H "Accept: application/json" \
+    -d '{"email":"example@examle.com","password":"dolores"}'
+
 ```
 
 ```javascript
@@ -82,9 +84,15 @@ let headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "email": "example@examle.com",
+    "password": "dolores"
+}
+
 fetch(url, {
     method: "POST",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
@@ -95,7 +103,12 @@ fetch(url, {
 ### HTTP Request
 `POST api/v1/login`
 
-
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `email` | string |  required  | email of user.
+        `password` | string |  required  | password of user. Example secret
+    
 <!-- END_8c0e48cd8efa861b308fc45872ff0837 -->
 
 
