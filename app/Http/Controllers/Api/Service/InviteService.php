@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\DB;
 
 class InviteService
 {
+    /**
+     * @param int $idRecipient
+     * @param int $idInitiatorInvite
+     */
     public function createInvite(int $idRecipient, int $idInitiatorInvite): void
     {
         $arrayInvite = [
@@ -25,6 +29,10 @@ class InviteService
         });
     }
 
+    /**
+     * @param $statusInvite
+     * @return mixed
+     */
     public function getInvites($statusInvite)
     {
         $user = Auth::user();
@@ -34,7 +42,15 @@ class InviteService
         if ($statusInvite==InviteRepository::DECLINE_INVITE) {
             return $user->invites()->declineInvites()->get();
         }
-
         return $user->invites()->pendingInvites()->get();
+    }
+
+    /**
+     * @param Invite $invite
+     * @param string $statusInvite
+     */
+    public function setStatusInvite(Invite $invite, string $statusInvite)
+    {
+        $invite->update(['status_invite'=>$statusInvite]);
     }
 }

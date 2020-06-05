@@ -70,7 +70,7 @@ curl -X POST \
     "http://localhost/api/v1/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"example@examle.com","password":"et"}'
+    -d '{"email":"example@examle.com","password":"eum"}'
 
 ```
 
@@ -86,7 +86,7 @@ let headers = {
 
 let body = {
     "email": "example@examle.com",
-    "password": "et"
+    "password": "eum"
 }
 
 fetch(url, {
@@ -121,7 +121,7 @@ curl -X POST \
     "http://localhost/api/v1/invite" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"recipient_id":4}'
+    -d '{"recipient_id":3}'
 
 ```
 
@@ -136,7 +136,7 @@ let headers = {
 };
 
 let body = {
-    "recipient_id": 4
+    "recipient_id": 3
 }
 
 fetch(url, {
@@ -170,7 +170,7 @@ curl -X GET \
     -G "http://localhost/api/v1/invite" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"status_invite":"voluptatem"}'
+    -d '{"status_invite":"qui"}'
 
 ```
 
@@ -185,7 +185,7 @@ let headers = {
 };
 
 let body = {
-    "status_invite": "voluptatem"
+    "status_invite": "qui"
 }
 
 fetch(url, {
@@ -212,8 +212,59 @@ fetch(url, {
 #### Body Parameters
 Parameter | Type | Status | Description
 --------- | ------- | ------- | ------- | -----------
-    `status_invite` | string |  optional  | value may be pending or decline or accept
+    `status_invite` | string |  optional  | value may be decline or accept default pending
     
 <!-- END_3d5fdbcb65b2c07619503cc8959aa1ea -->
+
+<!-- START_690ee41c2d5d6749b213b8bf0173449e -->
+## api/v1/invite
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+> Example request:
+
+```bash
+curl -X PUT \
+    "http://localhost/api/v1/invite" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"id_invite":11,"status":"quia"}'
+
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/v1/invite"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "id_invite": 11,
+    "status": "quia"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`PUT api/v1/invite`
+
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `id_invite` | integer |  required  | id invite
+        `status` | string |  required  | value may be accept or decline
+    
+<!-- END_690ee41c2d5d6749b213b8bf0173449e -->
 
 

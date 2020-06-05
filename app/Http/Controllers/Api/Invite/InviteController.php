@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Api\Invite;
 
+use App\Http\Controllers\Api\Repository\InviteRepository;
 use App\Http\Controllers\Api\Service\InviteService;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\Invite\CreatorInviteRequest;
 use App\Http\Requests\Api\Invite\GetterInviteRequest;
-use Illuminate\Http\Request;
+use App\Http\Requests\Api\Invite\SetterStatusInvite;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,10 +25,15 @@ class InviteController extends Controller
      * @var InviteService
      */
     private $service;
+    /**
+     * @var InviteRepository
+     */
+    private $repository;
 
-    public function __construct(InviteService $service)
+    public function __construct(InviteService $service, InviteRepository $repository)
     {
         $this->service = $service;
+        $this->repository = $repository;
     }
 
     /**
@@ -54,11 +60,27 @@ class InviteController extends Controller
      */
     public function getInvitesForUser(GetterInviteRequest $request)
     {
-        return \response($this->service->getInvites($request->status_invite));
+        try {
+            $invite = $this->service->getInvites($request->status_invite);
+        } catch (\Throwable $exception) {
+            return response(['status' => 'error', 'message' => $exception->getMessage()]);
+        }
+        return response(['status' => 'success', 'data' => $invite]);
     }
 
-    public function getInvitesFromUser()
+    /**
+     * @bodyParam id_invite integer required  id invite
+     * @bodyParam status string required  value may be accept or decline
+     * @param SetterStatusInvite $request
+     */
+    public function setStatusInvite(SetterStatusInvite $request)
     {
-
+        try {
+            $invite = $this->repository->getInvite($request->id_invite);
+            $this->service->setStatusInvite($invite, $request->id_invite);
+        } catch (\Throwable $exception) {
+            return response(['status' => 'error', 'message' => $exception->getMessage()]);
+        }
+        return response(['status' => 'success', 'message' => 'invite has updated']);
     }
 }

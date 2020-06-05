@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "96764ea7-306e-454d-998d-bf65d46edefb",
+        "_postman_id": "79fc70eb-6a89-4854-a453-48ba8553d368",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -61,7 +61,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"email\": \"example@examle.com\",\n    \"password\": \"et\"\n}"
+                            "raw": "{\n    \"email\": \"example@examle.com\",\n    \"password\": \"eum\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -89,7 +89,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"recipient_id\": 4\n}"
+                            "raw": "{\n    \"recipient_id\": 3\n}"
                         },
                         "description": "",
                         "response": []
@@ -117,7 +117,35 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"status_invite\": \"voluptatem\"\n}"
+                            "raw": "{\n    \"status_invite\": \"qui\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v1\/invite",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/v1\/invite",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"id_invite\": 11,\n    \"status\": \"quia\"\n}"
                         },
                         "description": "",
                         "response": []
