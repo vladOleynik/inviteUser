@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "5cb9c8a5-4ab1-49c2-b4dc-23853a69d6e6",
+        "_postman_id": "96764ea7-306e-454d-998d-bf65d46edefb",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -61,7 +61,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"email\": \"example@examle.com\",\n    \"password\": \"aut\"\n}"
+                            "raw": "{\n    \"email\": \"example@examle.com\",\n    \"password\": \"et\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -89,7 +89,35 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"recipient_id\": 12\n}"
+                            "raw": "{\n    \"recipient_id\": 4\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v1\/invite",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/v1\/invite",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"status_invite\": \"voluptatem\"\n}"
                         },
                         "description": "",
                         "response": []

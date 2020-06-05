@@ -3,9 +3,8 @@
 namespace App\Http\Requests\Api\Invite;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Auth;
 
-class CreatorInviteRequest extends FormRequest
+class GetterInviteRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,7 +24,7 @@ class CreatorInviteRequest extends FormRequest
     public function rules()
     {
         return [
-            'recipient_id' => 'required|integer|exists:users,id|not_in:'.Auth::id()
+            'status_invite' => 'in:decline,accept'
         ];
     }
 }

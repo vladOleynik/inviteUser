@@ -85,7 +85,7 @@ fetch(url, {
     "http://localhost/api/v1/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"example@examle.com","password":"aut"}'
+    -d '{"email":"example@examle.com","password":"et"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/v1/login"
@@ -98,7 +98,7 @@ let headers = {
 
 let body = {
     "email": "example@examle.com",
-    "password": "aut"
+    "password": "et"
 }
 
 fetch(url, {
@@ -146,7 +146,7 @@ fetch(url, {
     "http://localhost/api/v1/invite" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"recipient_id":12}'
+    -d '{"recipient_id":4}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/v1/invite"
@@ -158,7 +158,7 @@ let headers = {
 };
 
 let body = {
-    "recipient_id": 12
+    "recipient_id": 4
 }
 
 fetch(url, {
@@ -190,6 +190,66 @@ fetch(url, {
 </tbody>
 </table>
 <!-- END_d207e8ea51ac536a5e26fcdf0c543b60 -->
+<!-- START_3d5fdbcb65b2c07619503cc8959aa1ea -->
+<h2>api/v1/invite</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/v1/invite" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"status_invite":"voluptatem"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/invite"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "status_invite": "voluptatem"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (401):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Unauthenticated."
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/v1/invite</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>status_invite</code></td>
+<td>string</td>
+<td>optional</td>
+<td>value may be pending or decline or accept</td>
+</tr>
+</tbody>
+</table>
+<!-- END_3d5fdbcb65b2c07619503cc8959aa1ea -->
       </div>
       <div class="dark-box">
                         <div class="lang-selector">

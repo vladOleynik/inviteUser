@@ -70,7 +70,7 @@ curl -X POST \
     "http://localhost/api/v1/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"example@examle.com","password":"aut"}'
+    -d '{"email":"example@examle.com","password":"et"}'
 
 ```
 
@@ -86,7 +86,7 @@ let headers = {
 
 let body = {
     "email": "example@examle.com",
-    "password": "aut"
+    "password": "et"
 }
 
 fetch(url, {
@@ -121,7 +121,7 @@ curl -X POST \
     "http://localhost/api/v1/invite" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"recipient_id":12}'
+    -d '{"recipient_id":4}'
 
 ```
 
@@ -136,7 +136,7 @@ let headers = {
 };
 
 let body = {
-    "recipient_id": 12
+    "recipient_id": 4
 }
 
 fetch(url, {
@@ -159,5 +159,61 @@ Parameter | Type | Status | Description
     `recipient_id` | integer |  required  | id user for invite
     
 <!-- END_d207e8ea51ac536a5e26fcdf0c543b60 -->
+
+<!-- START_3d5fdbcb65b2c07619503cc8959aa1ea -->
+## api/v1/invite
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/api/v1/invite" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"status_invite":"voluptatem"}'
+
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/v1/invite"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "status_invite": "voluptatem"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (401):
+
+```json
+{
+    "message": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET api/v1/invite`
+
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `status_invite` | string |  optional  | value may be pending or decline or accept
+    
+<!-- END_3d5fdbcb65b2c07619503cc8959aa1ea -->
 
 

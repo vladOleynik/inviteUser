@@ -14,10 +14,11 @@ class CreateInvitesTable extends Migration
     public function up()
     {
         Schema::create('invites', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('initiator_invite');
             $table->unsignedBigInteger('recipient_invite');
-            //по умолчанию заявка создаеться не принятой, если она отменена она софт удаляется
-            $table->boolean('accepted_invite')->default(false);
+            //по умолчанию заявка создаеться в статусе pending
+            $table->enum('status_invite', ['pending', 'accept', 'decline'])->default('pending');
             $table->softDeletes();
             $table->timestamps();
 

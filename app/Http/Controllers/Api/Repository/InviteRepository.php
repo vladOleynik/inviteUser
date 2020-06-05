@@ -9,5 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class InviteRepository
 {
-//
+    const PENDING_INVITE = 'pending';
+    const DECLINE_INVITE = 'decline';
+    const ACCEPT_INVITE = 'accept';
 }
