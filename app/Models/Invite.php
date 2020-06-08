@@ -12,7 +12,9 @@ class Invite extends Pivot
 
     protected $table = "invites";
     protected $guarded = ['id'];
-
+    /**
+     * @var mixed
+     */
     public function scopePendingInvites($query)
     {
         return $query->where('status_invite', InviteRepository::PENDING_INVITE);

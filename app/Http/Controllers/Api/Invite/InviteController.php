@@ -70,14 +70,15 @@ class InviteController extends Controller
 
     /**
      * @bodyParam id_invite integer required  id invite
-     * @bodyParam status string required  value may be accept or decline
+     * @bodyParam status string required  value may be accepted or decline
      * @param SetterStatusInvite $request
      */
     public function setStatusInvite(SetterStatusInvite $request)
     {
         try {
             $invite = $this->repository->getInvite($request->id_invite);
-            $this->service->setStatusInvite($invite, $request->id_invite);
+            $this->authorize('update', $invite);
+            $this->service->setStatusInvite($invite, $request->status_invite);
         } catch (\Throwable $exception) {
             return response(['status' => 'error', 'message' => $exception->getMessage()]);
         }

@@ -25,7 +25,7 @@ class SetterStatusInvite extends FormRequest
     {
         return [
             'id_invite' => 'required|integer|exists:invites,id',
-            'status_invite'=>'required|in:decline,accept'
+            'status_invite'=>'required|in:decline,accepted'
         ];
     }
 }

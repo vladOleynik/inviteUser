@@ -70,7 +70,7 @@ curl -X POST \
     "http://localhost/api/v1/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"example@examle.com","password":"eum"}'
+    -d '{"email":"example@examle.com","password":"ut"}'
 
 ```
 
@@ -86,7 +86,7 @@ let headers = {
 
 let body = {
     "email": "example@examle.com",
-    "password": "eum"
+    "password": "ut"
 }
 
 fetch(url, {
@@ -121,7 +121,7 @@ curl -X POST \
     "http://localhost/api/v1/invite" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"recipient_id":3}'
+    -d '{"recipient_id":4}'
 
 ```
 
@@ -136,7 +136,7 @@ let headers = {
 };
 
 let body = {
-    "recipient_id": 3
+    "recipient_id": 4
 }
 
 fetch(url, {
@@ -170,7 +170,7 @@ curl -X GET \
     -G "http://localhost/api/v1/invite" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"status_invite":"qui"}'
+    -d '{"status_invite":"ab"}'
 
 ```
 
@@ -185,7 +185,7 @@ let headers = {
 };
 
 let body = {
-    "status_invite": "qui"
+    "status_invite": "ab"
 }
 
 fetch(url, {
@@ -226,7 +226,7 @@ curl -X PUT \
     "http://localhost/api/v1/invite" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id_invite":11,"status":"quia"}'
+    -d '{"id_invite":20,"status":"minima"}'
 
 ```
 
@@ -241,8 +241,8 @@ let headers = {
 };
 
 let body = {
-    "id_invite": 11,
-    "status": "quia"
+    "id_invite": 20,
+    "status": "minima"
 }
 
 fetch(url, {
@@ -263,7 +263,7 @@ fetch(url, {
 Parameter | Type | Status | Description
 --------- | ------- | ------- | ------- | -----------
     `id_invite` | integer |  required  | id invite
-        `status` | string |  required  | value may be accept or decline
+        `status` | string |  required  | value may be accepted or decline
     
 <!-- END_690ee41c2d5d6749b213b8bf0173449e -->
 
