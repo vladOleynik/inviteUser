@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "04d4e9aa-b341-4237-878c-31ae37a8a6eb",
+		"name": "inviteUser",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|9OXcOlTyYYIkPS2B4fHyXnmDwqCouEm7UhiueK5PkCpEtdAuOkmzabQjGCneRgeaGC0aw4IYUSMOai1Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"ldickens@example.org\",\n\t\"password\":\"password\"\n}"
+				},
+				"url": {
+					"raw": "larawork.host/api/v1/login",
+					"host": [
+						"larawork",
+						"host"
+					],
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createInvite",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|R7bnSjK11KgrT00EwBJAZsm6kRQ8lm7t1Y05hDOR80v4QuN2UIlyE5VkCKGeOWS3hLv1FqG1ZXKdjLr0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "recipient_id",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "larawork.host/api/v1/invite",
+					"host": [
+						"larawork",
+						"host"
+					],
+					"path": [
+						"api",
+						"v1",
+						"invite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get invite",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|hj9YPkXB8ADMd6YGlBL4yFKGcqWvKLqWIwP4rrVyx1q4PRKIQO538PRb2PbMthOeu8PJQw0qKc5N6Q45",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n}"
+				},
+				"url": {
+					"raw": "larawork.host/api/v1/invite",
+					"host": [
+						"larawork",
+						"host"
+					],
+					"path": [
+						"api",
+						"v1",
+						"invite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update invite",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|hj9YPkXB8ADMd6YGlBL4yFKGcqWvKLqWIwP4rrVyx1q4PRKIQO538PRb2PbMthOeu8PJQw0qKc5N6Q45",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"id_invite\":\"1\",\n \"status_invite\":\"decline\"\n}"
+				},
+				"url": {
+					"raw": "larawork.host/api/v1/invite",
+					"host": [
+						"larawork",
+						"host"
+					],
+					"path": [
+						"api",
+						"v1",
+						"invite"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
